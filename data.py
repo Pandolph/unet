@@ -8,10 +8,10 @@ import glob
 class myAugmentation(object):
 	
 	"""
-	A class used to augmentate image
+	A class used to augment image
 	Firstly, read train image and label seperately, and then merge them together for the next process
-	Secondly, use keras preprocessing to augmentate image
-	Finally, seperate augmentated image apart into train image and label
+	Secondly, use keras preprocessing to augment image
+	Finally, seperate augmented image apart into train image and label
 	"""
 
 	def __init__(self, train_path="train", label_path="label", merge_path="merge", aug_merge_path="aug_merge", aug_train_path="aug_train", aug_label_path="aug_label", img_type="tif"):
@@ -52,7 +52,7 @@ class myAugmentation(object):
 		imgtype = self.img_type
 		path_aug_merge = self.aug_merge_path
 		if len(trains) != len(labels) or len(trains) == 0 or len(trains) == 0:
-			print "trains can't match labels"
+			print("trains can't match labels")
 			return 0
 		for i in range(len(trains)):
 			img_t = load_img(path_train+"/"+str(i)+"."+imgtype)
@@ -135,7 +135,7 @@ class myAugmentation(object):
 
 class dataProcess(object):
 
-	def __init__(self, out_rows, out_cols, data_path = "../deform/train", label_path = "../deform/label", test_path = "../test", npy_path = "../npydata", img_type = "tif"):
+	def __init__(self, out_rows, out_cols, data_path = "/Users/pan/Desktop/unet/data/train/image", label_path = "/Users/pan/Desktop/unet/data/train/label", test_path = "/Users/pan/Desktop/unet/data/test", npy_path = "/Users/pan/Desktop/unet/npydata", img_type = "tif"):
 
 		"""
 		
